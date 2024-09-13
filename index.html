@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hecker hu bhai</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            color: #4AF626;
+            line-height: 1.2rem;
+            letter-spacing: 1px;
+            padding: 0 5px;
+            cursor: default;
+        }
+
+        .main p {
+            display: none;
+        }
+
+        .main p:first-child {
+            display: block;
+        }
+
+        .main p::selection,
+        .main p span::selection {
+            background-color: white;
+            color: black;
+        }
+
+        .main p:before {
+            content: "=> ";
+        }
+
+        .main p span:nth-child(1) {
+            visibility: hidden;
+            animation: autoplay 2s infinite;
+        }
+
+        .main p span:nth-child(2) {
+            visibility: hidden;
+            animation: autoplay2 2s infinite;
+        }
+
+        @keyframes autoplay {
+
+            0%,
+            30%,
+            75% {
+                visibility: hidden;
+            }
+
+            50%,
+            100% {
+                visibility: visible;
+            }
+        }
+
+        @keyframes autoplay2 {
+
+            0%,
+            40%,
+            70% {
+                visibility: hidden;
+            }
+
+            60%,
+            100% {
+                visibility: visible;
+            }
+        }
+
+        .main p:has(+ *[style]) span {
+            visibility: visible;
+            animation: none;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="main">
+        <p>Initializing Hacking.<span>.</span><span>.</span></p>
+        <p>Reading your files.<span>.</span><span>.</span></p>
+        <p>Password files detected.<span>.</span><span>.</span></p>
+        <p>Sending all password and personal files to the server.<span>.</span><span>.</span></p>
+        <p>Cleaning up.<span>.</span><span>.</span></p>
+        <p>Session Ended Successfully...</p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
